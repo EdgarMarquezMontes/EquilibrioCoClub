@@ -1,0 +1,170 @@
+.breaking-board-intro__pointer {
+  position: absolute;
+  z-index: 3;
+  top: var(--pointer-y, 50%);
+  left: var(--pointer-x, 50%);
+  width: clamp(4.25rem, 8vw, 6.25rem);
+  aspect-ratio: 128 / 112;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-38%, -56%) rotate(-22deg);
+  transition:
+    opacity 160ms ease,
+    filter 180ms ease;
+}
+
+.breaking-board-intro__foot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0.45rem 0.5rem rgb(48 26 13 / 42%));
+}
+
+.breaking-board-intro.has-pointer .breaking-board-intro__pointer {
+  opacity: 1;
+}
+
+.breaking-board-intro.is-breaking .breaking-board-intro__pointer {
+  animation: taekwondo-kick 520ms cubic-bezier(0.18, 0.8, 0.28, 1) both;
+}
+
+.breaking-board-intro__instruction {
+  position: absolute;
+  bottom: clamp(4.5rem, 10vh, 6.5rem);
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  color: rgb(244 231 207 / 82%);
+  font-family: var(--font-display);
+  font-size: clamp(0.68rem, 1.6vw, 0.9rem);
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 2px 16px #180c06;
+  transform: translateX(-50%);
+  animation: board-instruction-enter 700ms ease 500ms both;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.breaking-board-intro__instruction::before {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0 auto 0.8rem;
+  border: 1px solid rgb(222 181 113 / 65%);
+  border-radius: 50%;
+  background: radial-gradient(circle, #deb571 0 2px, transparent 3px);
+  content: "";
+  animation: board-impact-pulse 1.8s ease-out infinite;
+}
+
+.breaking-board-intro.is-breaking .breaking-board-intro__instruction {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.breaking-board-intro__skip {
+  position: absolute;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 4;
+  border: 1px solid rgb(244 231 207 / 24%);
+  background: rgb(16 12 9 / 38%);
+  padding: 0.65rem 0.85rem;
+  color: rgb(244 231 207 / 68%);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.breaking-board-intro__skip:hover {
+  border-color: var(--color-gold);
+  color: #fff1dc;
+}
+
+.breaking-board-intro__loading {
+  color: #f4e7cf;
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes board-instruction-enter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0.6rem);
+  }
+}
+
+@keyframes board-impact-pulse {
+  70% {
+    box-shadow: 0 0 0 0.6rem rgb(222 181 113 / 0%);
+  }
+}
+
+@keyframes board-impact-flash {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes taekwondo-kick {
+  0% {
+    opacity: 1;
+    transform: translate(-38%, -56%) rotate(-22deg) scale(1);
+  }
+  36% {
+    opacity: 1;
+    transform: translate(-15%, -76%) rotate(20deg) scale(1.45);
+  }
+  52% {
+    filter: brightness(1.7) drop-shadow(0 0 1.2rem #ffe0a8);
+    transform: translate(-15%, -76%) rotate(12deg) scale(1.52);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30%, -125%) rotate(34deg) scale(0.8);
+  }
+}
+
+@media (max-width: 700px) {
+  .breaking-board-intro__instruction {
+    bottom: 5.25rem;
+    width: calc(100% - 2rem);
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .breaking-board-intro__instruction {
+    bottom: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breaking-board-intro,
+  .breaking-board-intro__instruction {
+    transition-duration: 1ms;
+    animation-duration: 1ms;
+  }
+
+  .breaking-board-intro__instruction::before {
+    animation: none;
+  }
+
+  .breaking-board-intro.is-breaking .breaking-board-intro__pointer {
+    animation-duration: 1ms;
+  }
+}

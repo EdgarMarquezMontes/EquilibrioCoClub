@@ -1,0 +1,327 @@
+/* Cada término controla una coreografía propia mediante estas posiciones. */
+.technique-visual {
+  --body-a: rotate(0deg);
+  --body-b: rotate(0deg);
+  --la-a: rotate(145deg);
+  --la-b: rotate(205deg);
+  --ra-a: rotate(35deg);
+  --ra-b: rotate(-8deg) scaleX(1.25);
+  --ll-a: rotate(120deg);
+  --ll-b: rotate(120deg);
+  --rl-a: rotate(60deg);
+  --rl-b: rotate(60deg);
+  --tempo: 2.4s;
+}
+.technique-visual .martial-figure {
+  animation: technique-body var(--tempo) ease-in-out infinite;
+  transform-origin: 50% 70%;
+}
+.technique-visual .martial-arm--left {
+  animation: technique-left-arm var(--tempo) ease-in-out infinite;
+}
+.technique-visual .martial-arm--right {
+  animation: technique-right-arm var(--tempo) ease-in-out infinite;
+}
+.technique-visual .martial-leg--left {
+  animation: technique-left-leg var(--tempo) ease-in-out infinite;
+}
+.technique-visual .martial-leg--right {
+  animation: technique-right-leg var(--tempo) ease-in-out infinite;
+}
+
+/* Órdenes: firmes, saludo, preparación, salida, freno, retorno, descanso, giro y combate. */
+.technique-visual[data-technique="charyeot"] {
+  --la-a: rotate(105deg);
+  --la-b: rotate(102deg);
+  --ra-a: rotate(75deg);
+  --ra-b: rotate(78deg);
+  --ll-a: rotate(104deg);
+  --ll-b: rotate(101deg);
+  --rl-a: rotate(76deg);
+  --rl-b: rotate(79deg);
+}
+.technique-visual[data-technique="kyeong-nye"] {
+  --body-b: rotate(30deg);
+  --la-a: rotate(105deg);
+  --la-b: rotate(95deg);
+  --ra-a: rotate(75deg);
+  --ra-b: rotate(85deg);
+}
+.technique-visual[data-technique="junbi"] {
+  --la-b: rotate(42deg) scaleX(0.72);
+  --ra-b: rotate(138deg) scaleX(0.72);
+  --ll-b: rotate(128deg);
+  --rl-b: rotate(52deg);
+}
+.technique-visual[data-technique="sijak"] {
+  --body-b: rotate(-7deg) translateX(7%);
+  --la-b: rotate(165deg);
+  --ra-b: rotate(8deg) scaleX(1.45);
+  --ll-b: rotate(142deg);
+  --rl-b: rotate(44deg);
+  --tempo: 1.5s;
+}
+.technique-visual[data-technique="geuman"] {
+  --la-b: rotate(180deg) scaleX(1.3);
+  --ra-b: rotate(0deg) scaleX(1.3);
+  --tempo: 1.25s;
+}
+.technique-visual[data-technique="baro"] {
+  --body-a: translateX(8%);
+  --body-b: translateX(0);
+  --la-a: rotate(185deg);
+  --la-b: rotate(105deg);
+  --ra-a: rotate(-5deg);
+  --ra-b: rotate(75deg);
+}
+.technique-visual[data-technique="swieo"] {
+  --body-b: translateY(3%);
+  --la-b: rotate(118deg);
+  --ra-b: rotate(62deg);
+  --ll-b: rotate(132deg);
+  --rl-b: rotate(48deg);
+  --tempo: 3.2s;
+}
+.technique-visual[data-technique="dora"] {
+  --body-b: rotateY(180deg);
+  --la-b: rotate(170deg);
+  --ra-b: rotate(10deg);
+}
+.technique-visual[data-technique="kyesok"] {
+  --body-b: translateX(8%);
+  --la-b: rotate(210deg);
+  --ra-b: rotate(-15deg);
+  --ll-b: rotate(136deg);
+  --rl-b: rotate(32deg);
+  --tempo: 1.35s;
+}
+.technique-visual[data-technique="kalyeo"] {
+  --body-b: translateX(-5%);
+  --la-b: rotate(190deg) scaleX(1.35);
+  --ra-b: rotate(-10deg) scaleX(1.35);
+  --ll-b: rotate(148deg);
+  --rl-b: rotate(32deg);
+}
+
+/* Posiciones: la apertura y el reparto del peso cambian en cada base. */
+.technique-visual[data-technique="juchum-seogi"] {
+  --body-b: translateY(8%);
+  --ll-b: rotate(154deg) scaleX(1.2);
+  --rl-b: rotate(26deg) scaleX(1.2);
+}
+.technique-visual[data-technique="ap-seogi"] {
+  --body-b: translateX(4%);
+  --ll-b: rotate(132deg);
+  --rl-b: rotate(48deg) scaleX(1.18);
+}
+.technique-visual[data-technique="ap-kubi"] {
+  --body-b: translateX(9%) rotate(-3deg);
+  --ll-b: rotate(148deg) scaleX(1.3);
+  --rl-b: rotate(35deg) scaleX(1.35);
+}
+.technique-visual[data-technique="dwit-kubi"] {
+  --body-b: translateX(-8%) rotate(4deg);
+  --ll-b: rotate(137deg) scaleX(0.9);
+  --rl-b: rotate(42deg) scaleX(1.35);
+}
+.technique-visual[data-technique="moa-seogi"] {
+  --ll-a: rotate(98deg);
+  --ll-b: rotate(94deg);
+  --rl-a: rotate(82deg);
+  --rl-b: rotate(86deg);
+}
+.technique-visual[data-technique="beom-seogi"] {
+  --body-b: translateX(-6%) translateY(5%);
+  --ll-b: rotate(126deg) scaleX(0.7);
+  --rl-b: rotate(54deg) scaleX(1.25);
+}
+.technique-visual[data-technique="hakdari-seogi"] {
+  --body-b: translateX(-7%);
+  --ll-b: rotate(140deg) scaleX(1.05);
+  --rl-b: rotate(155deg) scaleX(0.62);
+  --tempo: 2.8s;
+}
+
+/* Patadas: frontal, circular, lateral, atrás, hacha, gancho, salto y empuje. */
+.technique-visual[data-technique="ap-chagi"] {
+  --body-b: rotate(-7deg);
+  --rl-b: rotate(-12deg) scaleX(1.65);
+  --tempo: 1.8s;
+}
+.technique-visual[data-technique="dollyo-chagi"] {
+  --body-b: rotate(-12deg) rotateY(18deg);
+  --rl-b: rotate(-34deg) scaleX(1.7);
+  --la-b: rotate(188deg);
+  --tempo: 1.9s;
+}
+.technique-visual[data-technique="yeop-chagi"] {
+  --body-b: rotate(-18deg);
+  --rl-b: rotate(2deg) scaleX(1.9);
+  --ll-b: rotate(105deg);
+  --tempo: 2s;
+}
+.technique-visual[data-technique="dwit-chagi"] {
+  --body-b: rotateY(155deg) rotate(-8deg);
+  --ll-b: rotate(188deg) scaleX(1.72);
+  --rl-b: rotate(78deg);
+  --tempo: 2.1s;
+}
+.technique-visual[data-technique="naeryeo-chagi"] {
+  --body-b: rotate(-8deg);
+  --rl-b: rotate(-82deg) scaleX(1.65);
+  --tempo: 2.3s;
+}
+.technique-visual[data-technique="huryeo-chagi"] {
+  --body-b: rotate(-14deg) translateX(-4%);
+  --rl-b: rotate(-55deg) scaleX(1.85);
+  --tempo: 1.75s;
+}
+.technique-visual[data-technique="twio-chagi"] {
+  --body-b: translateY(-22%) rotate(-8deg);
+  --ll-b: rotate(152deg) scaleX(0.65);
+  --rl-b: rotate(-18deg) scaleX(1.55);
+  --tempo: 1.65s;
+}
+.technique-visual[data-technique="mireo-chagi"] {
+  --body-b: rotate(-5deg);
+  --rl-b: rotate(8deg) scaleX(1.82);
+  --tempo: 2.5s;
+}
+
+/* Defensas y ataques reproducen altura y trayectoria. */
+.technique-visual[data-technique="arae-makki"] {
+  --la-b: rotate(102deg) scaleX(1.45);
+  --ra-b: rotate(180deg) scaleX(0.65);
+}
+.technique-visual[data-technique="momtong-makki"] {
+  --la-b: rotate(190deg) scaleX(1.35);
+  --ra-b: rotate(82deg) scaleX(0.7);
+}
+.technique-visual[data-technique="eolgul-makki"] {
+  --la-b: rotate(250deg) scaleX(1.25);
+  --ra-b: rotate(88deg) scaleX(0.7);
+}
+.technique-visual[data-technique="hansonnal-makki"] {
+  --la-b: rotate(205deg) scaleX(1.5);
+  --ra-b: rotate(145deg) scaleX(0.72);
+  --tempo: 1.9s;
+}
+.technique-visual[data-technique="jireugi"] {
+  --body-b: rotate(-5deg);
+  --la-b: rotate(165deg) scaleX(0.65);
+  --ra-b: rotate(-4deg) scaleX(1.65);
+  --tempo: 1.45s;
+}
+.technique-visual[data-technique="chigi"] {
+  --body-b: rotate(7deg);
+  --ra-a: rotate(-75deg);
+  --ra-b: rotate(18deg) scaleX(1.45);
+  --tempo: 1.65s;
+}
+.technique-visual[data-technique="chireugi"] {
+  --body-b: translateX(5%);
+  --la-b: rotate(160deg) scaleX(0.7);
+  --ra-b: rotate(-2deg) scaleX(1.8);
+  --tempo: 1.3s;
+}
+
+/* Conteo: cada número enciende una cantidad distinta de marcas y cambia el gesto. */
+.technique-count {
+  position: absolute;
+  inset: auto 10% 12%;
+  display: none;
+  gap: 3px;
+  justify-content: center;
+}
+.technique-count i {
+  width: 4px;
+  height: 10px;
+  background: var(--color-primary);
+  opacity: 0.18;
+  transform-origin: bottom;
+  animation: count-mark 1.4s ease-in-out infinite;
+}
+.technique-visual[data-technique="hana"],
+.technique-visual[data-technique="dul"],
+.technique-visual[data-technique="set"],
+.technique-visual[data-technique="net"],
+.technique-visual[data-technique="daseot"],
+.technique-visual[data-technique="yeoseot"],
+.technique-visual[data-technique="ilgop"],
+.technique-visual[data-technique="yeodeol"],
+.technique-visual[data-technique="ahop"],
+.technique-visual[data-technique="yeol"] {
+  --la-b: rotate(190deg);
+  --ra-b: rotate(-10deg);
+  --tempo: 1.6s;
+}
+.technique-visual[data-technique="hana"] .technique-count,
+.technique-visual[data-technique="dul"] .technique-count,
+.technique-visual[data-technique="set"] .technique-count,
+.technique-visual[data-technique="net"] .technique-count,
+.technique-visual[data-technique="daseot"] .technique-count,
+.technique-visual[data-technique="yeoseot"] .technique-count,
+.technique-visual[data-technique="ilgop"] .technique-count,
+.technique-visual[data-technique="yeodeol"] .technique-count,
+.technique-visual[data-technique="ahop"] .technique-count,
+.technique-visual[data-technique="yeol"] .technique-count {
+  display: flex;
+}
+.technique-visual[data-technique="hana"] .technique-count i:nth-child(n + 2),
+.technique-visual[data-technique="dul"] .technique-count i:nth-child(n + 3),
+.technique-visual[data-technique="set"] .technique-count i:nth-child(n + 4),
+.technique-visual[data-technique="net"] .technique-count i:nth-child(n + 5),
+.technique-visual[data-technique="daseot"] .technique-count i:nth-child(n + 6),
+.technique-visual[data-technique="yeoseot"] .technique-count i:nth-child(n + 7),
+.technique-visual[data-technique="ilgop"] .technique-count i:nth-child(n + 8),
+.technique-visual[data-technique="yeodeol"] .technique-count i:nth-child(n + 9),
+.technique-visual[data-technique="ahop"] .technique-count i:nth-child(n + 10) {
+  visibility: hidden;
+}
+
+/* Cultura del dojang: entrada, uniforme, cinturón, maestro, forma, combate y rotura. */
+.technique-visual[data-technique="dojang"] {
+  --body-a: translateX(-18%);
+  --body-b: translateX(12%);
+  --la-b: rotate(105deg);
+  --ra-b: rotate(75deg);
+  --tempo: 3s;
+}
+.technique-visual[data-technique="dobok"] {
+  --la-b: rotate(180deg) scaleX(1.1);
+  --ra-b: rotate(0deg) scaleX(1.1);
+  --tempo: 2.8s;
+}
+.technique-visual[data-technique="ti"] {
+  --body-b: translateY(2%);
+  --la-b: rotate(55deg) scaleX(0.72);
+  --ra-b: rotate(125deg) scaleX(0.72);
+}
+.technique-visual[data-technique="sabeomnim"] {
+  --body-b: rotate(20deg);
+  --la-b: rotate(105deg);
+  --ra-b: rotate(75deg);
+  --tempo: 3s;
+}
+.technique-visual[data-technique="kwanjangnim"] {
+  --body-b: rotate(25deg);
+  --la-b: rotate(118deg);
+  --ra-b: rotate(62deg);
+  --tempo: 3.4s;
+}
+.technique-visual[data-technique="poomsae"] {
+  --body-b: translateX(6%) rotate(-5deg);
+  --la-b: rotate(215deg);
+  --ra-b: rotate(-5deg) scaleX(1.45);
+  --ll-b: rotate(145deg);
+  --rl-b: rotate(35deg);
+  --tempo: 2.2s;
+}
+.technique-visual[data-technique="kyorugi"] {
+  --body-b: translateX(4%);
+  --la-b: rotate(210deg);
+  --ra-b: rotate(-25deg);
+  --ll-b: rotate(132deg);
+  --rl-b: rotate(42deg);
+  --tempo: 1.3s;
+}

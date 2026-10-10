@@ -1,0 +1,329 @@
+.technique-visual[data-technique="kyokpa"] {
+  --body-b: rotate(8deg);
+  --ra-a: rotate(-78deg);
+  --ra-b: rotate(32deg) scaleX(1.55);
+  --tempo: 1.55s;
+}
+.technique-visual[data-technique="kamsahamnida"] {
+  --body-b: rotate(32deg);
+  --la-b: rotate(103deg);
+  --ra-b: rotate(77deg);
+  --tempo: 3.1s;
+}
+
+.technique-visual[data-motion="kick"] .technique-impact,
+.technique-visual[data-motion="strike"] .technique-impact {
+  animation: technique-impact 2.2s ease-out infinite;
+}
+
+.taegeuk-element {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: color-mix(in oklab, var(--color-card) 76%, transparent);
+  perspective: 800px;
+}
+.taegeuk-element::before {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 28%, transparent);
+  transform: rotate(2deg);
+}
+.taegeuk-element--compact {
+  width: 3.25rem;
+}
+.taegeuk-ink {
+  width: 100%;
+  height: 100%;
+  padding: 8%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(
+    0 8px 12px color-mix(in oklab, var(--color-primary) 18%, transparent)
+  );
+  transform-origin: center;
+  animation: ink-float 5s ease-in-out infinite;
+}
+.taegeuk-ink .ink-frame {
+  stroke: var(--color-foreground);
+  stroke-width: 1.5;
+  opacity: 0.24;
+}
+.taegeuk-element--compact .taegeuk-ink {
+  padding: 10%;
+  stroke-width: 6;
+}
+.taegeuk-caption {
+  position: absolute;
+  right: 9%;
+  bottom: 7%;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-muted-foreground);
+}
+.taegeuk-element--cielo .taegeuk-ink {
+  animation-name: ink-sun;
+}
+.taegeuk-element--lago .taegeuk-ink {
+  animation-name: ink-lake;
+}
+.taegeuk-element--fuego .taegeuk-ink {
+  animation-name: ink-fire;
+  animation-duration: 2.1s;
+}
+.taegeuk-element--trueno .taegeuk-ink {
+  animation-name: ink-thunder;
+  animation-duration: 3.4s;
+}
+.taegeuk-element--viento .taegeuk-ink {
+  animation-name: ink-wind;
+  animation-duration: 3.2s;
+}
+.taegeuk-element--agua .taegeuk-ink {
+  animation-name: ink-water;
+  animation-duration: 3.8s;
+}
+.taegeuk-element--montana .taegeuk-ink {
+  animation-name: ink-mountain;
+  animation-duration: 5.4s;
+}
+.taegeuk-element--tierra .taegeuk-ink {
+  animation-name: ink-earth;
+  animation-duration: 4.8s;
+}
+
+.kick-perspective {
+  perspective: 1200px;
+}
+
+.kick-card {
+  transform-style: preserve-3d;
+  animation: card-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    box-shadow 450ms ease;
+}
+
+.kick-card[data-kick-index="1"] {
+  animation-delay: 90ms;
+}
+.kick-card[data-kick-index="2"] {
+  animation-delay: 180ms;
+}
+.kick-card[data-kick-index="3"] {
+  animation-delay: 270ms;
+}
+
+.kick-card:hover {
+  transform: rotateX(4deg) rotateY(-7deg) translateY(-8px) scale(1.015);
+  border-color: color-mix(in oklab, var(--color-primary) 70%, transparent);
+  box-shadow: 18px 24px 42px
+    color-mix(in oklab, var(--color-foreground) 12%, transparent);
+}
+
+.kick-card:hover .kick-depth {
+  transform: translateZ(44px) scale(1.05);
+}
+
+.kick-depth {
+  transform: translateZ(20px);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.poomsae-chip,
+.poomsae-row {
+  animation: poomsae-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.poomsae-chip[data-poomsae-index="1"],
+.poomsae-row[data-poomsae-index="1"] {
+  animation-delay: 55ms;
+}
+.poomsae-chip[data-poomsae-index="2"],
+.poomsae-row[data-poomsae-index="2"] {
+  animation-delay: 110ms;
+}
+.poomsae-chip[data-poomsae-index="3"],
+.poomsae-row[data-poomsae-index="3"] {
+  animation-delay: 165ms;
+}
+.poomsae-chip[data-poomsae-index="4"],
+.poomsae-row[data-poomsae-index="4"] {
+  animation-delay: 220ms;
+}
+.poomsae-chip[data-poomsae-index="5"],
+.poomsae-row[data-poomsae-index="5"] {
+  animation-delay: 275ms;
+}
+.poomsae-chip[data-poomsae-index="6"],
+.poomsae-row[data-poomsae-index="6"] {
+  animation-delay: 330ms;
+}
+.poomsae-chip[data-poomsae-index="7"],
+.poomsae-row[data-poomsae-index="7"] {
+  animation-delay: 385ms;
+}
+
+.poomsae-chip:hover {
+  transform: translateY(-3px) scale(1.025);
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-7deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes poomsae-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scan-visual {
+  0%,
+  30% {
+    transform: translateX(-100%);
+  }
+  70%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes mark-3d {
+  0%,
+  100% {
+    transform: rotateY(-14deg) rotateX(4deg) rotateZ(0);
+  }
+  50% {
+    transform: rotateY(14deg) rotateX(-4deg) rotateZ(180deg);
+  }
+}
+
+@keyframes arms-ready {
+  0%,
+  100% {
+    transform: rotate(145deg);
+  }
+  45%,
+  65% {
+    transform: rotate(205deg) translateX(-8%);
+  }
+}
+@keyframes technique-body {
+  0%,
+  18%,
+  100% {
+    transform: var(--body-a);
+  }
+  52%,
+  76% {
+    transform: var(--body-b);
+  }
+}
+@keyframes technique-left-arm {
+  0%,
+  18%,
+  100% {
+    transform: var(--la-a);
+  }
+  52%,
+  76% {
+    transform: var(--la-b);
+  }
+}
+@keyframes technique-right-arm {
+  0%,
+  18%,
+  100% {
+    transform: var(--ra-a);
+  }
+  52%,
+  76% {
+    transform: var(--ra-b);
+  }
+}
+@keyframes technique-left-leg {
+  0%,
+  18%,
+  100% {
+    transform: var(--ll-a);
+  }
+  52%,
+  76% {
+    transform: var(--ll-b);
+  }
+}
+@keyframes technique-right-leg {
+  0%,
+  18%,
+  100% {
+    transform: var(--rl-a);
+  }
+  52%,
+  76% {
+    transform: var(--rl-b);
+  }
+}
+@keyframes count-mark {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scaleY(0.45);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes body-bow {
+  0%,
+  25%,
+  100% {
+    transform: rotate(0);
+  }
+  50%,
+  72% {
+    transform: rotate(28deg);
+  }
+}
+@keyframes body-turn {
+  0%,
+  20% {
+    transform: rotateY(0);
+  }
+  60%,
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes stance-left {
+  0%,
+  100% {
+    transform: rotate(120deg);
+  }
+  50% {
+    transform: rotate(145deg) scaleX(1.15);
+  }
+}

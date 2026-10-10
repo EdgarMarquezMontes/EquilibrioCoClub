@@ -1,0 +1,10 @@
+@import "tailwindcss" source(none);
+@source "..";
+@import "tw-animate-css";
+@import "./global/theme-and-figure.css";
+@import "./global/technique-poses.css";
+@import "./global/technique-motion.css";
+@import "./global/ink-and-reveal.css";
+@import "./global/routes-and-board.css";
+@import "./global/board-animation.css";
+@import "./global/site-punch.css";

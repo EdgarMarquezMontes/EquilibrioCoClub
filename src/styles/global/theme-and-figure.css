@@ -1,0 +1,319 @@
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --font-display: "Oswald", "Impact", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.16 0.008 264);
+  --foreground: oklch(0.96 0.004 264);
+  --card: oklch(0.21 0.01 264);
+  --card-foreground: oklch(0.96 0.004 264);
+  --popover: oklch(0.21 0.01 264);
+  --popover-foreground: oklch(0.96 0.004 264);
+  --primary: oklch(0.56 0.21 27);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.26 0.012 264);
+  --secondary-foreground: oklch(0.96 0.004 264);
+  --muted: oklch(0.26 0.012 264);
+  --muted-foreground: oklch(0.72 0.015 264);
+  --accent: oklch(0.3 0.02 264);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.32 0.012 264);
+  --input: oklch(0.32 0.012 264);
+  --ring: oklch(0.56 0.21 27);
+  --gold: oklch(0.82 0.13 88);
+  --scene-background: rgb(23 23 26);
+  --scene-foreground: rgb(244 244 245);
+  --scene-primary: rgb(220 38 38);
+  --scene-border: rgb(85 85 94);
+}
+
+.light {
+  --background: oklch(0.975 0.005 80);
+  --foreground: oklch(0.2 0.012 264);
+  --card: oklch(0.94 0.008 80);
+  --card-foreground: oklch(0.2 0.012 264);
+  --popover: oklch(0.99 0.004 80);
+  --popover-foreground: oklch(0.2 0.012 264);
+  --primary: oklch(0.5 0.2 27);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.9 0.01 80);
+  --secondary-foreground: oklch(0.2 0.012 264);
+  --muted: oklch(0.91 0.008 80);
+  --muted-foreground: oklch(0.45 0.018 264);
+  --accent: oklch(0.88 0.02 27);
+  --accent-foreground: oklch(0.2 0.012 264);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.78 0.012 80);
+  --input: oklch(0.78 0.012 80);
+  --ring: oklch(0.5 0.2 27);
+  --gold: oklch(0.63 0.13 88);
+  --scene-background: rgb(247 245 241);
+  --scene-foreground: rgb(39 39 42);
+  --scene-primary: rgb(200 30 30);
+  --scene-border: rgb(139 137 132);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+    overflow-x: hidden;
+  }
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+}
+
+@utility technique-grid {
+  background-image:
+    linear-gradient(
+      color-mix(in oklab, var(--color-border) 45%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--color-border) 45%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 20px 20px;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+}
+
+.technique-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    color-mix(in oklab, var(--color-primary) 12%, transparent) 48%,
+    transparent 66%
+  );
+  transform: translateX(-100%);
+  animation: scan-visual 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.technique-canvas {
+  background: radial-gradient(
+    circle at 52% 42%,
+    color-mix(in oklab, var(--color-primary) 10%, transparent),
+    transparent 55%
+  );
+}
+.technique-canvas canvas {
+  cursor: grab;
+}
+.technique-canvas canvas:active {
+  cursor: grabbing;
+}
+.axis-label {
+  position: absolute;
+  z-index: 4;
+  font: 700 9px/1 var(--font-display);
+}
+.axis-label--x {
+  left: 13%;
+  bottom: 15%;
+  color: oklch(0.63 0.23 25);
+}
+.axis-label--y {
+  left: 25%;
+  top: 19%;
+  color: oklch(0.7 0.19 145);
+}
+.axis-label--z {
+  left: 37%;
+  bottom: 24%;
+  color: oklch(0.66 0.18 255);
+}
+
+.equilibrio-mark {
+  position: relative;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  perspective: 500px;
+}
+
+.equilibrio-mark__depth,
+.equilibrio-mark__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.equilibrio-mark__depth {
+  border-radius: 50%;
+  background: var(--color-primary);
+  filter: blur(7px);
+  opacity: 0.3;
+  transform: translateY(4px) scale(0.8);
+}
+
+.equilibrio-mark__image {
+  filter: drop-shadow(
+    0 3px 3px color-mix(in oklab, var(--color-primary) 50%, transparent)
+  );
+  animation: mark-3d 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.light .equilibrio-mark__image {
+  filter: invert(1)
+    drop-shadow(
+      0 3px 3px color-mix(in oklab, var(--color-primary) 45%, transparent)
+    );
+}
+
+.martial-figure {
+  position: relative;
+  width: clamp(4.5rem, 20%, 7rem);
+  height: clamp(6rem, 58%, 10rem);
+  color: var(--color-primary);
+  filter: drop-shadow(
+    0 0 12px color-mix(in oklab, var(--color-primary) 35%, transparent)
+  );
+}
+
+.martial-head {
+  position: absolute;
+  left: 38%;
+  top: 0;
+  width: 24%;
+  aspect-ratio: 1;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+}
+.martial-torso {
+  position: absolute;
+  left: 46%;
+  top: 20%;
+  width: 10%;
+  height: 38%;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: 50% 10%;
+}
+.martial-belt {
+  position: absolute;
+  left: 30%;
+  top: 49%;
+  width: 40%;
+  height: 4px;
+  background: var(--color-foreground);
+  box-shadow: 0 0 0 1px var(--color-background);
+}
+.martial-limb {
+  position: absolute;
+  height: 4px;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: 0 50%;
+}
+.martial-arm {
+  top: 28%;
+  width: 45%;
+}
+.martial-arm--left {
+  left: 50%;
+  transform: rotate(145deg);
+}
+.martial-arm--right {
+  left: 50%;
+  transform: rotate(35deg);
+}
+.martial-leg {
+  top: 55%;
+  left: 50%;
+  width: 52%;
+}
+.martial-leg--left {
+  transform: rotate(120deg);
+}
+.martial-leg--right {
+  transform: rotate(60deg);
+}
+.technique-impact {
+  position: absolute;
+  width: 7rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+}

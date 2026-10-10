@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 const srcDirectory = fileURLToPath(new URL("./src", import.meta.url));
 
 export default defineConfig({
-  base: "/EquilibrioCo/",
+  base: "/EquilibrioCoClub/",
   plugins: [
     tailwindcss(),
     tanstackStart({

@@ -16,9 +16,9 @@ export default defineConfig({
       },
       spa: {
         enabled: true,
-        maskPath: "/404.html",
+        maskPath: "/",
         prerender: {
-          outputPath: "/404",
+          outputPath: "/404.html",
         },
       },
     }),

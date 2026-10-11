@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getTermino, terminos } from "@/data/vocabulario";
+import { getTermino, terminos } from "@/data/vocabularioData";
 import { TechniqueVisual } from "@/components/taekwondo/TechniqueVisual";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 
 export const Route = createFileRoute("/vocabulario_/$slug")({
   loader: ({ params }) => {

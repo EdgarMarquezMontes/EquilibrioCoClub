@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 
 export const Route = createFileRoute("/logros")({
   head: () => ({
@@ -88,9 +88,7 @@ function Logros() {
     if (raw) {
       try {
         setLogros(JSON.parse(raw) as Logro[]);
-      } catch {
-        /* ignora datos corruptos */
-      }
+      } catch {}
     }
   }, []);
 

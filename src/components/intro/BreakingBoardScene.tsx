@@ -55,6 +55,7 @@ function Board({ brokenAt }: { brokenAt: number | null }) {
     () => new THREE.TetrahedronGeometry(1, 0),
     [],
   );
+
   const splinterMaterial = useMemo(
     () =>
       new THREE.MeshStandardMaterial({

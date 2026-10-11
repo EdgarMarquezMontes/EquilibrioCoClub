@@ -14,13 +14,13 @@ export default defineConfig({
       server: {
         entry: "./src/server.ts",
       },
-      spa: {
+      prerender: {
         enabled: true,
-        maskPath: "/",
-        prerender: {
-          outputPath: "/404.html",
-        },
+        autoStaticPathsDiscovery: true,
+        crawlLinks: true,
+        failOnError: true,
       },
+      spa: { enabled: false },
     }),
     react(),
   ],

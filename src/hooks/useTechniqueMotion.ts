@@ -5,7 +5,7 @@ import {
   poseFor,
   type Pose,
   type Rotation,
-} from "./techniquePoses";
+} from "./useTechniquePoses";
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 const ss = (a: number, b: number, x: number) => {

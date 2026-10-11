@@ -4,7 +4,7 @@ import maestro1 from "@/assets/maestro-1.jpg";
 import maestro2 from "@/assets/maestro-2.jpg";
 import maestro3 from "@/assets/maestro-3.jpg";
 import maestro4 from "@/assets/maestro-4.jpg";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 
 export const Route = createFileRoute("/fundacion")({
   head: () => ({

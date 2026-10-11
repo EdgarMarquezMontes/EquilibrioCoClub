@@ -8,13 +8,13 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
+import { Route as rootRouteImport } from './routes/root.tsx'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FundacionRouteImport } from './routes/fundacion'
 import { Route as LogrosRouteImport } from './routes/logros'
 import { Route as PoomsaeRouteImport } from './routes/poomsae'
 import { Route as VocabularioRouteImport } from './routes/vocabulario'
-import { Route as VocabularioSlugRouteImport } from './routes/vocabulario_.$slug'
+import { Route as VocabularioSlugRouteImport } from './routes/vocabularioSlug.tsx'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',

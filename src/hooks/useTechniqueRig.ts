@@ -9,14 +9,14 @@ import {
   KICKS,
   lerpR,
   samplePose,
-} from "./techniqueMotion";
+} from "./useTechniqueMotion";
 import {
   JOINTS,
   neutral,
   poseFor,
   type JointName,
   type Pose,
-} from "./techniquePoses";
+} from "./useTechniquePoses";
 
 export type RigTargets = {
   root: RefObject<THREE.Object3D | null>;

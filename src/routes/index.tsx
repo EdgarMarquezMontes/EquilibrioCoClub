@@ -11,7 +11,7 @@ import { HomeCultureSection } from "@/components/sections/HomeCultureSection";
 import { HomeHistorySection } from "@/components/sections/HomeHistorySection";
 import { KicksSection } from "@/components/sections/KicksSection";
 import { MusashiSection } from "@/components/sections/MusashiSection";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 import "@/styles/global/home-experience.css";
 import { HomeAtmosphere } from "@/components/taekwondo/HomeAtmosphere";
 

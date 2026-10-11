@@ -1,8 +1,8 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { extensionAt } from "@/hooks/techniqueMotion";
-import { COUNT_TERMS } from "@/hooks/techniquePoses";
+import { extensionAt } from "@/hooks/useTechniqueMotion";
+import { COUNT_TERMS } from "@/hooks/useTechniquePoses";
 
 const HANGUL = [
   "하나",

@@ -1,4 +1,3 @@
-// src/routes/root.tsx
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import { QueryClient } from "@tanstack/react-query";
 import {
@@ -130,7 +129,6 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <App queryClient={queryClient}>
-      {/* Importante: <Outlet /> renderiza las rutas hijas */}
       <Outlet />
     </App>
   );

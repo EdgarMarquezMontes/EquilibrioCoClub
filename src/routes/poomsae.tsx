@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import poomsaeImg from "@/assets/poomsae.jpg";
 import { TaegeukElement } from "@/components/taekwondo/TaegeukElement";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 
 export const Route = createFileRoute("/poomsae")({
   head: () => ({

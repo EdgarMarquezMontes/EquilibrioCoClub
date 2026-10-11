@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categorias, terminos } from "@/data/vocabulario";
+import { categorias, terminos } from "@/data/vocabularioData";
 import { useMemo, useState } from "react";
 import { TechniqueVisual } from "@/components/taekwondo/TechniqueVisual";
-import { createPageTitle } from "@/utils/page-title";
+import { createPageTitle } from "@/utils/pageTitle";
 
 export const Route = createFileRoute("/vocabulario")({
   head: () => ({

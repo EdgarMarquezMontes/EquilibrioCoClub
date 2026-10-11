@@ -1,6 +1,6 @@
 import { conteo } from "./vocabulario/conteo";
-import { defensasYGolpes } from "./vocabulario/defensas-y-golpes";
-import { dojangYEtiqueta } from "./vocabulario/dojang-y-etiqueta";
+import { defensasYGolpes } from "./vocabulario/defensasYGolpes";
+import { dojangYEtiqueta } from "./vocabulario/dojangYEtiqueta";
 import { ordenes } from "./vocabulario/ordenes";
 import { patadas } from "./vocabulario/patadas";
 import { posiciones } from "./vocabulario/posiciones";
